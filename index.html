@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Registration System</h1>
+
+        <form id="studentForm" novalidate>
+            <section class="form-section">
+                <h2>Personal Information</h2>
+
+                <div class="field-row">
+                    <label for="firstname">First Name:</label>
+                    <input type="text" id="firstname" name="firstname" required>
+                </div>
+
+                <div class="field-row">
+                    <label for="middlename">Middle Name:</label>
+                    <input type="text" id="middlename" name="middlename">
+                </div>
+
+                <div class="field-row">
+                    <label for="lastname">Last Name:</label>
+                    <input type="text" id="lastname" name="lastname" required>
+                </div>
+
+                <div class="field-row">
+                    <label for="studentId">Student ID:</label>
+                    <input type="text" id="studentId" name="studentId" required>
+                </div>
+
+                <div class="field-row">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+
+                <div class="field-row gender-row">
+                    <label>Gender:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="gender" value="Male"> Male</label>
+                        <label><input type="radio" name="gender" value="Female"> Female</label>
+                        <label><input type="radio" name="gender" value="Others"> Others</label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>Contact Information</h2>
+
+                <div class="field-row">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="field-row">
+                    <label for="phone">Contact Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="field-row">
+                    <label for="address">Complete Address:</label>
+                    <textarea id="address" name="address" rows="4" required></textarea>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>Academic Information</h2>
+
+                <div class="field-row">
+                    <label for="course">Course:</label>
+                    <select id="course" name="course" required>
+                        <option value="">Select a course</option>
+                        <option value="BS Information Technology">BS Information Technology</option>
+                        <option value="BS Computer Science">BS Computer Science</option>
+                    </select>
+                </div>
+
+                <div class="field-row">
+                    <label for="yearLevel">Year Level:</label>
+                    <select id="yearLevel" name="yearLevel" required>
+                        <option value="">Select year level</option>
+                        <option value="1st Year">1st Year</option>
+                        <option value="2nd Year">2nd Year</option>
+                        <option value="3rd Year">3rd Year</option>
+                        <option value="4th Year">4th Year</option>
+                        <option value="5th Year">5th Year</option>
+                        <option value="Irregular">Irregular</option>
+                    </select>
+                </div>
+
+                <div class="field-row">
+                    <label for="section">Section:</label>
+                    <select id="section" name="section" required>
+                        <option value="">Select a section</option>
+                        <option value="INF241">INF241</option>
+                        <option value="INF242">INF242</option>
+                        <option value="INF243">INF243</option>
+                        <option value="INF244">INF244</option>
+                        <option value="INF245">INF245</option>
+                        <option value="INF246">INF246</option>
+                        <option value="INF247">INF247</option>
+                        <option value="INF248">INF248</option>
+                        <option value="INF249">INF249</option>
+                        <option value="INF240">INF240</option>
+                    </select>
+                </div>
+
+                <div class="field-row">
+                    <label for="schoolYear">School Year:</label>
+                    <input type="text" id="schoolYear" name="schoolYear" placeholder="e.g. 2026-2027" required>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>Account Information</h2>
+
+                <div class="field-row">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+
+                <div class="field-row">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <div class="field-row">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+            </section>
+
+            <div class="button-group">
+                <button type="submit" id="register">Register Student</button>
+                <button type="reset" id="clearform" class="secondary">Clear Form</button>
+            </div>
+        </form>
+
+        <section id="summary" class="summary hidden" aria-live="polite">
+            <h2>Registration Successful</h2>
+            <table class="summary-table">
+                <tr>
+                    <th>Student ID</th>
+                    <td id="summaryStudentId"></td>
+                </tr>
+                <tr>
+                    <th>Full Name</th>
+                    <td id="summaryName"></td>
+                </tr>
+                <tr>
+                    <th>Date of Birth</th>
+                    <td id="summaryDob"></td>
+                </tr>
+                <tr>
+                    <th>Gender</th>
+                    <td id="summaryGender"></td>
+                </tr>
+                <tr>
+                    <th>Email Address</th>
+                    <td id="summaryEmail"></td>
+                </tr>
+                <tr>
+                    <th>Contact Number</th>
+                    <td id="summaryPhone"></td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td id="summaryAddress"></td>
+                </tr>
+                <tr>
+                    <th>Course</th>
+                    <td id="summaryCourse"></td>
+                </tr>
+                <tr>
+                    <th>Year Level</th>
+                    <td id="summaryYear"></td>
+                </tr>
+                <tr>
+                    <th>Section</th>
+                    <td id="summarySection"></td>
+                </tr>
+                <tr>
+                    <th>School Year</th>
+                    <td id="summarySchoolYear"></td>
+                </tr>
+                <tr>
+                    <th>Username</th>
+                    <td id="summaryUsername"></td>
+                </tr>
+            </table>
+            <div class="success-note">Student registration completed successfully!</div>
+        </section>
+    </div>
+</body>
+</html>
